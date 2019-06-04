@@ -12,6 +12,7 @@ require('database.php');
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+    <!--стиль для авторизации в админ панель -->
     <style>
 
       #auth{display:none;}
@@ -33,14 +34,12 @@ require('database.php');
         z-index: 9;
       }
 
-      /* Add styles to the form container */
       .form-container {
         max-width: 300px;
         padding: 10px;
         background-color: white;
       }
 
-      /* Full-width input fields */
       .form-container input[type=text], .form-container input[type=password] {
         width: 100%;
         padding: 15px;
@@ -49,13 +48,11 @@ require('database.php');
         background: #f1f1f1;
       }
 
-      /* When the inputs get focus, do something */
       .form-container input[type=text]:focus, .form-container input[type=password]:focus {
         background-color: #ddd;
         outline: none;
       }
 
-      /* Set a style for the submit/login button */
       .form-container .btn {
         background-color: #4CAF50;
         color: white;
@@ -67,19 +64,17 @@ require('database.php');
         opacity: 0.8;
       }
 
-      /* Add a red background color to the cancel button */
       .form-container .cancel {
         background-color: red;
       }
 
-      /* Add some hover effects to buttons */
       .form-container .btn:hover, .open-button:hover {
         opacity: 1;
       }
     </style>
 
 
-
+    <!--Скрипт для проверки введенных данных в форму авторизации -->
     <script>
     function OpenFunction() {
       document.getElementById("auth").style.display = "block";
@@ -126,6 +121,7 @@ require('database.php');
 <section>
 <div class="container marketing">
 <div class="row">
+      <!--Вывод всех книжек с базы данных -->
   <?php
   $database=$connect->prepare("SELECT raamatud.raamatu_nimi,raamatud.pilt,raamatud.kirjeldus,autor.nimi,autor.perekonnanimi,zanrid.zanr
     FROM raamatud,zanrid,autor
