@@ -61,17 +61,27 @@ li a:hover {
 }
 #ZanriLisamine{
     position: absolute;
-    left: 400px;
+    left: 350px;
 }
 #raamatu_lisamine{
     position: absolute;
-    left: 700px;
+    left: 600px;
 }
 #Ramatukustutamine{
     position: absolute;
-    left: 1000px;
+    left: 1300px;
 }
+#Zanrikustutamine{
+    position: absolute;
+    left: 1450px;
+}
+#Autorkustutamine{
+  position: absolute;
+  left: 1600px;
+}
+
 #RedegRaamat{
   position: absolute;
-  left: 1250px;
+
+  left: 950px;
 }

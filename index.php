@@ -123,6 +123,7 @@ require('database.php');
 <h3 style="text-align:center;">Все книги</h3>
 <br>
 <br>
+<section>
 <div class="container marketing">
 <div class="row">
   <?php
@@ -156,14 +157,7 @@ require('database.php');
   ?>
 </div><!-- /.row -->
 </div>
-
-
-
-    <div class="footer">
-        <p>artur.kexpa()gmail.com <br>
-          Artur Šumilo
-        </p>
-    </div>
+</section>
 
 </body>
 </html>
