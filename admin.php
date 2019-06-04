@@ -40,6 +40,11 @@ if(isset($_REQUEST["RaamatuLisaminee"])) {
 
 }
 
+if(isset($_REQUEST["RaamatRedeg"])) {
+    raamatuRedegeeremine($_REQUEST["RaamatSelectRedeg"],$_REQUEST["redegraamatNimi"],$_REQUEST["AutorSelectRedeg"],$_REQUEST["redegraamatopisanie"],$_REQUEST["ZanrSelectRedeg"]);
+    header("Location: admin.php");
+    exit();
+}
 
 
 if(isset($_REQUEST["ZanriKustutaminee"])) {
@@ -272,7 +277,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
         echo "<form action='admin.php'>";
         echo "Выберите Книгу:";
         echo "<br>";
-        echo "<select name='RaamatSelectRedeg'>";
+        echo "<select name='RaamatSelectRedeg' >";
 
         $kask=$connect->prepare("SELECT raamatud.raamatud_id,raamatud.raamatu_nimi,raamatud.pilt,raamatud.kirjeldus,autor.nimi,autor.perekonnanimi,zanrid.zanr
           FROM raamatud,zanrid,autor
@@ -288,15 +293,25 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
         echo "------------";
         echo "<br>";
         echo "<form action='admin.php' method='post'> ";
-        echo "Имя Автора:";
+        echo "Название книги:";
         echo "<br>";
-        echo "<input type='text' name='redegautorinimi'>";
+        echo "<input type='text' name='redegraamatNimi'>";
         echo "<br>";
-        echo "Фамилия Автора:";
+        echo "Описание Книги:";
         echo "<br>";
-        echo "<input type='text' name='redegautorperekonnanimi'>";
+        echo "<input type='text' name='redegraamatopisanie'>";
+        ECHO "<BR>";
+        echo "Автор:";
         echo "<br>";
-
+        echo "<select name='AutorSelectRedeg'>";
+        $kask=$connect->prepare("SELECT autor_id,nimi,perekonnanimi FROM autor ");
+        $kask->bind_result($id,$nimi,$perekonnanimi);
+        $kask->execute();
+        while($kask->fetch()){
+            echo "<option value='$id'>$nimi $perekonnanimi</option>";
+        }
+        echo "</select>";
+        echo "<br>";
         echo "Жанр:";
         echo "<br>";
         echo "<select name='ZanrSelectRedeg'>";
@@ -309,16 +324,6 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
         echo "</select>";
 
         echo "<br>";
-        echo "Автор:";
-        echo "<br>";
-        echo "<select name='AutorSelectRedeg'>";
-        $kask=$connect->prepare("SELECT autor_id,nimi,perekonnanimi FROM autor ");
-        $kask->bind_result($id,$nimi,$perekonnanimi);
-        $kask->execute();
-        while($kask->fetch()){
-            echo "<option value='$id'>$nimi $perekonnanimi</option>";
-        }
-        echo "</select>";
         echo "<br>";
         echo "<br>";
 
@@ -327,31 +332,10 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 
     ?>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="footer">
         <p>artur.kexpa()gmail.com <br>
           Artur Šumilo
         </p>
     </div>
-
 </body>
 </html>

@@ -50,27 +50,10 @@ function kustutaRaamat($id){
     $kask->execute();
 }
 
-
-
-
-
-
-
-
-
-function lisaToode($toodeNimetus,$toodegruppID,$hind){
-    global $yhendus;
-    $kask=$yhendus->prepare("INSERT INTO toode(toodeNimetus,toodegruppID,hind)
-VALUES (?,?,?)");
-    $kask->bind_param("sdi",$toodeNimetus,$toodegruppID,$hind);
-    $kask->execute();
-}
-
-
-function ToodeKustutamine($id){
-    global $yhendus;
-    $kask=$yhendus->prepare("DELETE FROM toode WHERE id=?");
-    $kask->bind_param("i",$id);
+function raamatuRedegeeremine($raamatud_id , $raamatu_nimi , $autor , $kirjeldus , $zanr){
+    global $connect;
+    $kask=$connect->prepare("UPDATE raamatud SET raamatu_nimi =? , autor=? , kirjeldus = ?, zanr = ? WHERE raamatud_id= ?");
+    $kask->bind_param("sisii",$raamatu_nimi , $autor , $kirjeldus ,$zanr, $raamatud_id);
     $kask->execute();
 }
 
