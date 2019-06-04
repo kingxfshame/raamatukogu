@@ -1,18 +1,20 @@
 <?php
+// Запрос файла
 require('php/funktsioonid.php');
+// Функция на добавление жанра
 if(isset($_REQUEST["ZanriLisamine"])) {
     lisaZanri($_REQUEST["uusZanriNimi"]);
     header("Location: admin.php");
     exit();
 }
 
-
+// Функция на добавление автора
 if(isset($_REQUEST["AutoriLisamine"])) {
     lisaAutor($_REQUEST["autorinimi"],$_REQUEST["autoriperekonnanimi"]);
     header("Location: admin.php");
     exit();
 }
-
+// Функция на добавление книжки и проверку файла
 if(isset($_REQUEST["RaamatuLisaminee"])) {
   if(isset($_FILES['image'])){
    $errors= array();
@@ -39,26 +41,26 @@ if(isset($_REQUEST["RaamatuLisaminee"])) {
   }
 
 }
-
+// Функция на изменения книги
 if(isset($_REQUEST["RaamatRedeg"])) {
     raamatuRedegeeremine($_REQUEST["RaamatSelectRedeg"],$_REQUEST["redegraamatNimi"],$_REQUEST["AutorSelectRedeg"],$_REQUEST["redegraamatopisanie"],$_REQUEST["ZanrSelectRedeg"]);
     header("Location: admin.php");
     exit();
 }
 
-
+// Функция на удаление жанра
 if(isset($_REQUEST["ZanriKustutaminee"])) {
     kustutaZanr($_REQUEST["ZanrSelectDelete"]);
     header("Location: admin.php");
     exit();
 }
-
+// Функция на удаление автора
 if(isset($_REQUEST["AutorKustutaminee"])) {
     kustutaAutor($_REQUEST["AutorSelectDelete"]);
     header("Location: admin.php");
     exit();
 }
-
+// Функция на удаление книги
 if(isset($_REQUEST["RaamatuKustutaminee"])) {
     kustutaRaamat($_REQUEST["RaamatSelectDelete"]);
     header("Location: admin.php");
