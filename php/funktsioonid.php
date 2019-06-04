@@ -57,11 +57,4 @@ function raamatuRedegeeremine($raamatud_id , $raamatu_nimi , $autor , $kirjeldus
     $kask->execute();
 }
 
-
-function redegerimine($taskOptionRedegeri , $redegtoodenimi , $redegtoodehind , $taskOptionRedeg){
-    global $yhendus;
-    $kask=$yhendus->prepare("UPDATE toode SET toodeNimetus =? , toodegruppID=? , hind = ? WHERE id= ?");
-    $kask->bind_param("sidi",$redegtoodenimi , $taskOptionRedeg , $redegtoodehind ,$taskOptionRedegeri );
-    $kask->execute();
-}
 ?>

@@ -1,6 +1,7 @@
 <?php
 // Запрос файла
 require('php/funktsioonid.php');
+
 // Функция на добавление жанра
 if(isset($_REQUEST["ZanriLisamine"])) {
     lisaZanri($_REQUEST["uusZanriNimi"]);
@@ -272,7 +273,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 
 
 
-  <!--При нажатие на кнопку открывается форма --> 
+  <!--При нажатие на кнопку открывается форма -->
 <div id ="RedegRaamat">
     <a href="?redeg" class="btn btn-outline-primary">Редактировать Книгу</a>
     <br>

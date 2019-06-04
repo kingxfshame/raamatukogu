@@ -96,6 +96,8 @@ require('database.php');
         {
           window.open('admin.php')
           document.getElementById("auth").style.display = "none";
+          <?php
+          ?>
             }
         else
         {
