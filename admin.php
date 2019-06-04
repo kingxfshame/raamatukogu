@@ -92,6 +92,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 <br>
 
 <div id ="AutoriLisamine">
+  <!--При нажатие на кнопку открывается форма -->
 <a href="?add" class="btn btn-outline-primary">Добавить нового автора</a>
     <br>
     <br>
@@ -112,6 +113,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
     ?>
 </div>
 <div id ="ZanriLisamine">
+    <!--При нажатие на кнопку открывается форма -->
 <a href="?addgrupp" class="btn btn-outline-primary">Добавить Новый Жанр</a>
     <br>
     <br>
@@ -130,6 +132,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 </div>
 
 <div id ="raamatu_lisamine">
+    <!--При нажатие на кнопку открывается форма -->
 <a href="?addraamat" class="btn btn-outline-primary">Добавить новую Книгу</a>
     <br>
     <br>
@@ -189,7 +192,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 
 
 
-
+  <!--При нажатие на кнопку открывается форма -->
 <div id ="Ramatukustutamine">
     <a href="?udalenie" class="btn btn-outline-primary">Удалить Книгу</a>
     <br>
@@ -214,7 +217,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 
     ?>
 </div>
-
+  <!--При нажатие на кнопку открывается форма -->
 <div id ="Zanrikustutamine">
     <a href="?Zanrudalenie" class="btn btn-outline-primary">Удалить Жанр</a>
     <br>
@@ -239,7 +242,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 
     ?>
 </div>
-
+  <!--При нажатие на кнопку открывается форма -->
 <div id ="Autorkustutamine">
     <a href="?Autorudalenie" class="btn btn-outline-primary">Удалить Автора</a>
     <br>
@@ -269,7 +272,7 @@ if(isset($_REQUEST["RaamatuKustutaminee"])) {
 
 
 
-
+  <!--При нажатие на кнопку открывается форма --> 
 <div id ="RedegRaamat">
     <a href="?redeg" class="btn btn-outline-primary">Редактировать Книгу</a>
     <br>
