@@ -55,3 +55,23 @@ li a:hover {
     width: 100%;
     height: 80px;
 }
+#AutoriLisamine{
+    position: absolute;
+    left: 100px;
+}
+#ZanriLisamine{
+    position: absolute;
+    left: 400px;
+}
+#raamatu_lisamine{
+    position: absolute;
+    left: 700px;
+}
+#Ramatukustutamine{
+    position: absolute;
+    left: 1000px;
+}
+#RedegRaamat{
+  position: absolute;
+  left: 1250px;
+}
